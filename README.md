@@ -1,1 +1,253 @@
-# wishlist
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wedding Surprise ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ffe6f0,#fff);
+    font-family:Georgia, serif;
+    text-align:center;
+}
+
+
+/* Card */
+
+.card{
+    width:85%;
+    max-width:550px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 0 30px pink;
+    position:relative;
+    z-index:2;
+}
+
+
+h1{
+    color:#c2185b;
+    font-size:38px;
+}
+
+
+h2{
+    color:#ad1457;
+}
+
+
+img{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #ff99bb;
+}
+
+
+p{
+    font-size:20px;
+    color:#555;
+    line-height:1.8;
+}
+
+
+.from{
+    margin-top:20px;
+    font-size:24px;
+    color:#d81b60;
+    font-weight:bold;
+}
+
+
+/* Falling Rose */
+
+.petal{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    animation:fall linear infinite;
+    z-index:1;
+}
+
+
+@keyframes fall{
+
+0%{
+    transform:translateY(0) rotate(0deg);
+}
+
+100%{
+    transform:translateY(120vh) rotate(360deg);
+}
+
+}
+
+
+/* Floating Heart */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:35px;
+    animation:up 5s linear infinite;
+    z-index:1;
+}
+
+
+@keyframes up{
+
+0%{
+    transform:translateY(0);
+    opacity:0;
+}
+
+50%{
+    opacity:1;
+}
+
+100%{
+    transform:translateY(-120vh);
+    opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>
+💍 Wedding Wishes 💍
+</h1>
+
+
+<img src="wish.jpg">
+
+
+<h2>
+Srabonti Paul ❤️ Srikanto Datta
+</h2>
+
+
+<p>
+
+Two hearts, one beautiful journey ❤️
+
+<br><br>
+
+Dear Srabonti & Srikanto,
+
+<br><br>
+
+May your married life be filled with endless love, happiness, trust and beautiful memories.
+
+<br><br>
+
+May your love grow stronger with every passing day.  
+Wishing you both a lifetime full of smiles, peace and togetherness. 🌹
+
+<br><br>
+
+Congratulations on your beautiful new beginning! 💐
+
+</p>
+
+
+<div class="from">
+
+With lots of love ❤️
+<br>
+From Tonny 🌹
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+// Rose Petals
+
+function createPetal(){
+
+let petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+petal.style.left=Math.random()*100+"%";
+
+petal.style.animationDuration=(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(petal);
+
+
+setTimeout(()=>{
+
+petal.remove();
+
+},8000);
+
+}
+
+
+setInterval(createPetal,300);
+
+
+
+// Hearts
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+
+setInterval(createHeart,800);
+
+
+</script>
+
+
+</body>
+</html>
